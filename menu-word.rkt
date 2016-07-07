@@ -9,7 +9,7 @@
 (struct menu (state game i)
   #:methods gen:word
   [
-   (define (word-label w ft) "Pong Menu")
+   (define (word-label w ft) "rBreakout Menu")
    (define (word-tick w) (if (= 0 (menu-i w)) (begin
                                                 (play-bg)
                                                 (struct-copy menu w [i 1])) w))
