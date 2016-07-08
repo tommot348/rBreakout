@@ -15,7 +15,7 @@
 
 ;(gl-filter-mode 'crt)
 
-(define coordinates (make-coordinates (matrix)))
+(define coordinates (make-coordinates (make-matrix)))
 (define bricks (make-bricks coordinates))
-(define game (rBreakout bricks matrix coordinates (/ width 2.0) 0 ball-start-x ball-start-y 0.0 0.0 0 3 0))
+(define game (rBreakout bricks coordinates (/ width 2.0) 0 ball-start-x ball-start-y 0.0 0.0 0 3 0))
 (call-with-chaos (make-gui #:mode gui-mode) (lambda() (fiat-lux (menu 0 game 0))) )

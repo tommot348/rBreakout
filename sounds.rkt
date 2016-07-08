@@ -19,8 +19,12 @@
 ;(define background-track (sound-at bg-sound 50.0+50.0i #:gain 0.9 #:looping? #t))
 (define background-track (background (lambda (a) bg-sound)))
 ;(sound-pause! system-state)
-(define (play-bg) (render-sound system-state 0.1 5.0+5.0i (exact->inexact 0.0) (list background-track)))
-(define (play-sounds sounds) (render-sound system-state 0.1 5.0+5.0i (exact->inexact 0.0) sounds))
+(define (play-bg)
+  (define ss (render-sound system-state 0.1 5.0+5.0i (exact->inexact 0.0) (list background-track)))
+  (set! system-state ss))
+(define (play-sounds sounds)
+  (define ss (render-sound system-state 0.1 5.0+5.0i (exact->inexact 0.0) sounds))
+  (set! system-state ss))
 
 (define (stop-playback) (sound-context-destroy! context))
 

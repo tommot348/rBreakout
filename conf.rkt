@@ -28,7 +28,7 @@
 
 (define paddle-y (- height 30.0))
 
-(define (matrix)
+(define (make-matrix)
   (filter (lambda (x) (= 255 (list-ref x 2)))
           (apply append
                  (map (lambda (y)
