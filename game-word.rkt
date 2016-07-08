@@ -97,7 +97,7 @@
        [else (struct-copy rBreakout w [ps 0])]))
    
    (define (word-output w)
-     (dc layers (list (rBreakout-bricks w) (plasma (rBreakout-i w)) cloud frame) (list  (paddle (rBreakout-px w)) (ball (rBreakout-bx w) (rBreakout-by w)))))
+     (dc layers (list (rBreakout-bricks w) (plasma (rBreakout-i w)) cloud frame) (list (score (rBreakout-score w)) (lives (rBreakout-lives w)) (paddle (rBreakout-px w)) (ball (rBreakout-bx w) (rBreakout-by w)))))
    
    ])
 
